@@ -5,13 +5,13 @@ body {
   left: 0px;
   top: 0px;
 
+  background: rgb(250, 0, 255);
   background: linear-gradient(
-      347.86deg,
-      #ebd618 1.83%,
-      rgba(255, 255, 255, 0) 32.4%
-    ),
-    linear-gradient(145.71deg, #fa00ff 4.14%, rgba(255, 255, 255, 0) 39.46%),
-    #7ecded;
+    159deg,
+    rgba(250, 0, 255, 1) 0%,
+    rgba(126, 205, 237, 1) 50%,
+    rgba(235, 214, 24, 1) 100%
+  );
 }
 #greeting {
   /* What’s the Mood for Today? */
