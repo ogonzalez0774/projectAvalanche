@@ -1,9 +1,11 @@
-body {
+#grayBlock {
   position: absolute;
-  width: 100%;
-  height: auto;
+  width: 1440px;
+  height: 401px;
   left: 0px;
   top: 0px;
+
+  background: #2e2e2e;
 
   background: rgb(250, 0, 255);
   background: linear-gradient(
