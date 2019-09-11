@@ -1,12 +1,12 @@
 #grayBlock {
   position: absolute;
   width: 1440px;
-  height: 401px;
+  height: 300px;
   left: 0px;
   top: 0px;
-
   background: #2e2e2e;
-
+}
+body {
   background: rgb(250, 0, 255);
   background: linear-gradient(
     159deg,
@@ -35,15 +35,4 @@
   text-align: center;
 
   color: #ffffff;
-}
-#grayBlock {
-  /* Rectangle 2 */
-
-  position: absolute;
-  width: 100%;
-  height: 400px;
-  left: 0px;
-  top: 0px;
-
-  background: #2e2e2e;
 }
