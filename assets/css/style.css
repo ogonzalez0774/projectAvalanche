@@ -9,12 +9,15 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+#toplogo {
+  height: 150px;
+}
 #greeting {
   /* What’s the Mood for Today? */
   height: 400px;
-  font-family: Montserrat;
+  font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 300;
   font-size: 1.5em;
   line-height: 1.5em;
   /* display: flex;
@@ -25,7 +28,7 @@ body {
   color: #ffffff;
 }
 #welcomeText {
-  font-size: 1.5em;
+  font-size: 2.85em;
   line-height: 1.5em;
-  margin-top: 175px;
+  margin-top: 48px;
 }
