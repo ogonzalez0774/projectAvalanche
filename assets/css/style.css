@@ -13,6 +13,11 @@ body {
   height: 150px;
   margin-top: none;
 }
+h1 {
+  text-align: center;
+  font-weight: 100px;
+  margin-top: 50px;
+}
 #greeting {
   /* What’s the Mood for Today? */
   height: 325px;
@@ -31,10 +36,10 @@ body {
 input {
   height: 50px;
   width: 300px;
-  margin-top: 50px;
+  margin-top: 105px;
 }
 button {
-  margin-top: 100px;
+  margin-top: 80px;
   width: 100px;
 }
 #welcomeText {
