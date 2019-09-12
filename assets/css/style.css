@@ -1,13 +1,11 @@
 body {
-  background: rgb(177, 0, 157);
   background: linear-gradient(
-    135deg,
-    rgba(177, 0, 157, 1) 0%,
-    rgba(117, 9, 121, 1) 0%,
-    rgba(77, 127, 166, 1) 40%,
-    rgba(86, 163, 144, 1) 66%,
-    rgba(238, 186, 0, 1) 100%
-  );
+      347.86deg,
+      #ebd618 1.83%,
+      rgba(255, 255, 255, 0) 32.4%
+    ),
+    linear-gradient(145.71deg, #fa00ff 4.14%, rgba(255, 255, 255, 0) 39.46%),
+    #7ecded;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
