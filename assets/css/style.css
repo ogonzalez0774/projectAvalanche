@@ -31,6 +31,10 @@ body {
 input {
   height: 50px;
   width: 300px;
+  margin-top: 50px;
+}
+button {
+  margin-top: 100px;
 }
 #welcomeText {
   font-size: 2.85em;
