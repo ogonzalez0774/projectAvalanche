@@ -1,17 +1,15 @@
 body {
-  position: absolute;
-  width: 100%;
-  height: auto;
-  left: 0px;
-  top: 0px;
-
+  background: rgb(177, 0, 157);
   background: linear-gradient(
-      347.86deg,
-      #ebd618 1.83%,
-      rgba(255, 255, 255, 0) 32.4%
-    ),
-    linear-gradient(145.71deg, #fa00ff 4.14%, rgba(255, 255, 255, 0) 39.46%),
-    #7ecded;
+    135deg,
+    rgba(177, 0, 157, 1) 0%,
+    rgba(117, 9, 121, 1) 0%,
+    rgba(77, 127, 166, 1) 40%,
+    rgba(86, 163, 144, 1) 66%,
+    rgba(238, 186, 0, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 #greeting {
   /* What’s the Mood for Today? */
@@ -21,17 +19,17 @@ body {
   height: 159px;
   left: 3px;
   top: 232px; */
-  margin: 15% 20% 0 20%;
 
   font-family: Montserrat;
   font-style: normal;
   font-weight: 600;
-  font-size: 2.5em;
+  font-size: 1.5em;
   line-height: 1.5em;
   /* display: flex;
   align-items: center;
   text-align: center;
  */
+  background-color: #3b3b3b;
   color: #ffffff;
 }
 #grayBlock {
