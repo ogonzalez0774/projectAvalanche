@@ -35,6 +35,7 @@ input {
 }
 button {
   margin-top: 100px;
+  width: 100px;
 }
 #welcomeText {
   font-size: 2.85em;
