@@ -28,6 +28,10 @@ body {
   background-color: #3b3b3b;
   color: #ffffff;
 }
+input {
+  height: 50px;
+  width: 300px;
+}
 #welcomeText {
   font-size: 2.85em;
   line-height: 1.5em;
