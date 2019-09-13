@@ -49,19 +49,20 @@ button {
 }
 
 #grayblock {
-  height: 100px;
+  height: 70px;
   background-color: #3b3b3b;
-  margin-top: -100px;
+  margin-top: -275px;
 }
 #links {
   text-decoration: none;
   text-align: center;
   color: #ffffff;
   display: inline;
+  margin-top: ;
 }
 
 #logotype {
   height: 70px;
-  margin-top: -300px;
+  margin-top: 1px;
   margin-left: 35px;
 }
