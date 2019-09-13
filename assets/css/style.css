@@ -48,6 +48,14 @@ button {
   margin-top: 15px;
 }
 
+#firstfooter {
+  background-color: transparent;
+  color: #ffffff;
+  text-align: center;
+  font-size: 0.5em;
+  margin-top: 97px;
+}
+
 #grayblock {
   height: 70px;
   background-color: #3b3b3b;
