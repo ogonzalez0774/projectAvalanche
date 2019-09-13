@@ -48,8 +48,20 @@ button {
   margin-top: 15px;
 }
 
+#grayblock {
+  height: 100px;
+  background-color: #3b3b3b;
+  margin-top: -100px;
+}
+#links {
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+  display: inline;
+}
+
 #logotype {
   height: 70px;
-  margin-top: -500px;
+  margin-top: -300px;
   margin-left: 35px;
 }
