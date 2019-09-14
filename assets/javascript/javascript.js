@@ -80,7 +80,7 @@ $("#enter").on("click", function() {
           $(`#poem`).empty();
           var wholePoem = response[0].lines;
           wholePoem.forEach(element => {
-            lineDiv = $(`<p>${element}</p>`);
+            lineDiv = $(`<p class="poemPrinter text-center">${element}</p>`);
             $(`#poem`).append(lineDiv);
           });
         });
