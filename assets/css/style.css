@@ -108,3 +108,9 @@ footer {
 #poem {
   margin-bottom: 3%;
 }
+input {
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  border: solid 1px white;
+  padding: 5px;
+}
