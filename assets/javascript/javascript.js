@@ -59,7 +59,8 @@ $("#enter").on("click", function() {
       console.log("Temperature (F): " + response.main.temp);
 
       //Poem API using Weather description as search term
-      var poemAPIquery = response.weather[0].description;
+      var poemAPIquery = response.weather[0].main;
+      console.log(poemAPIquery);
       var settings = {
         async: true,
         crossDomain: true,
@@ -71,9 +72,18 @@ $("#enter").on("click", function() {
         }
       };
 
-      $.ajax(settings).done(function(response) {
-        console.log(response[0]);
-      });
+      $.ajax(settings)
+        .done(function(response) {
+          console.log(response[0]);
+        })
+        .then(function(response) {
+          $(`#poem`).empty();
+          var wholePoem = response[0].lines;
+          wholePoem.forEach(element => {
+            lineDiv = $(`<p>${element}</p>`);
+            $(`#poem`).append(lineDiv);
+          });
+        });
     });
 });
 
