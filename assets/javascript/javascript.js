@@ -86,20 +86,3 @@ $("#enter").on("click", function() {
         });
     });
 });
-
-// Poetry API Ref
-var poemAPIquery = "overcast clouds";
-var settings = {
-  async: true,
-  crossDomain: true,
-  url: `https://thundercomb-poetry-db-v1.p.rapidapi.com/lines/${poemAPIquery}`,
-  method: "GET",
-  headers: {
-    "x-rapidapi-host": "thundercomb-poetry-db-v1.p.rapidapi.com",
-    "x-rapidapi-key": "19dc21ba3bmsh40de2f313d3e435p1cf0acjsn33cd70909f84"
-  }
-};
-
-$.ajax(settings).done(function(response) {
-  console.log(`THIS WAS PULLED WITHOUT DOING ANYTHING: ${response}`);
-});
