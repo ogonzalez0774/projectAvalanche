@@ -1,5 +1,5 @@
 console.log("projectAVALANCHE");
-
+var poemAPIquery;
 $("#enter").on("click", function() {
   $("#greeting").hide();
   $("#welcomeText").hide();
@@ -57,6 +57,23 @@ $("#enter").on("click", function() {
       console.log("Wind Speed: " + response.wind.speed);
       console.log("Humidity: " + response.main.humidity);
       console.log("Temperature (F): " + response.main.temp);
+
+      //Poem API using Weather description as search term
+      var poemAPIquery = response.weather[0].description;
+      var settings = {
+        async: true,
+        crossDomain: true,
+        url: `https://thundercomb-poetry-db-v1.p.rapidapi.com/lines/${poemAPIquery}`,
+        method: "GET",
+        headers: {
+          "x-rapidapi-host": "thundercomb-poetry-db-v1.p.rapidapi.com",
+          "x-rapidapi-key": "19dc21ba3bmsh40de2f313d3e435p1cf0acjsn33cd70909f84"
+        }
+      };
+
+      $.ajax(settings).done(function(response) {
+        console.log(response[0]);
+      });
     });
 });
 
@@ -74,5 +91,5 @@ var settings = {
 };
 
 $.ajax(settings).done(function(response) {
-  console.log(response);
+  console.log(`THIS WAS PULLED WITHOUT DOING ANYTHING: ${response}`);
 });
