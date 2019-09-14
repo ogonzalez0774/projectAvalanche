@@ -46,11 +46,11 @@ $("#enter").on("click", function() {
       console.log(response);
 
       // Transfer content to HTML
-      $(".city").html("<h1>" + response.name + " Weather Details</h1>");
-      $(".wind").text("Wind Speed: " + response.wind.speed);
-      $(".humidity").text("Humidity: " + response.main.humidity);
-      $(".temp").text("Temperature (F) " + response.main.temp);
-
+      $("#city").html("<h1>" + response.name + " Weather Details</h1>");
+      $("#wind").text("Wind Speed: " + response.wind.speed);
+      $("#humidity").text("Humidity: " + response.main.humidity);
+      $("#temp").text("Temperature (F) " + response.main.temp);
+      $(`#typearea`).val("");
       // Log the data in the console as well
       console.log("Wind Speed: " + response.wind.speed);
       console.log("Humidity: " + response.main.humidity);
