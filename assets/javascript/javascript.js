@@ -61,10 +61,11 @@ $("#enter").on("click", function() {
 });
 
 // Poetry API Ref
+var poemAPIquery = "overcast clouds";
 var settings = {
   async: true,
   crossDomain: true,
-  url: "https://thundercomb-poetry-db-v1.p.rapidapi.com/title/Sonnet%2018",
+  url: `https://thundercomb-poetry-db-v1.p.rapidapi.com/lines/${poemAPIquery}`,
   method: "GET",
   headers: {
     "x-rapidapi-host": "thundercomb-poetry-db-v1.p.rapidapi.com",
