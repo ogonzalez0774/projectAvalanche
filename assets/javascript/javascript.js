@@ -46,10 +46,11 @@ $("#enter").on("click", function() {
       console.log(response);
 
       // Transfer content to HTML
-      $("#currentWeather").text(
-        "Current Weather " + response.weather[0].description
-      );
+
       $("#city").html("<h1>" + response.name + " Weather Details</h1>");
+      $("#currentWeather").text(
+        "Current Weather: " + response.weather[0].description
+      );
       $("#wind").text("Wind Speed: " + response.wind.speed);
       $("#humidity").text("Humidity: " + response.main.humidity);
       $("#temp").text("Temperature (F) " + response.main.temp);

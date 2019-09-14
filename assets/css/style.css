@@ -83,9 +83,14 @@ footer {
   margin-top: 657px;
   padding-top: 5px;
   padding-bottom: 5px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 #weather {
+  margin-top: 255px;
   text-align: center;
   font-size: 25px;
 }
