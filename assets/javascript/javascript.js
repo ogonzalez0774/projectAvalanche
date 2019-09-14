@@ -4,6 +4,10 @@ let playlist_id = "37i9dQZF1DX7KNKjOK0o75";
 var queryURL = `https://api.spotify.com/v1/playlists/${playlist_id}`;
 
 $("#enter").on("click", function() {
+  $("#greeting").hide();
+  $("#welcomeText").hide();
+  $("#secondpage").show();
+
   // Performing an AJAX request with the queryURL
   $.ajax({
     url: queryURL,
