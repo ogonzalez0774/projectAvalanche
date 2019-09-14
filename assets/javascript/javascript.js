@@ -1,8 +1,5 @@
 console.log("projectAVALANCHE");
 
-let playlist_id = "37i9dQZF1DX7KNKjOK0o75";
-var queryURL = `https://api.spotify.com/v1/playlists/${playlist_id}`;
-
 $("#enter").on("click", function() {
   $("#greeting").hide();
   $("#welcomeText").hide();
