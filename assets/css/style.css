@@ -90,6 +90,8 @@ footer {
 }
 
 #weather {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
   margin-top: 255px;
   text-align: center;
   font-size: 25px;
