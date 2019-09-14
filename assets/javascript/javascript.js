@@ -59,3 +59,19 @@ $("#enter").on("click", function() {
       console.log("Temperature (F): " + response.main.temp);
     });
 });
+
+// Poetry API Ref
+var settings = {
+  async: true,
+  crossDomain: true,
+  url: "https://thundercomb-poetry-db-v1.p.rapidapi.com/title/Sonnet%2018",
+  method: "GET",
+  headers: {
+    "x-rapidapi-host": "thundercomb-poetry-db-v1.p.rapidapi.com",
+    "x-rapidapi-key": "19dc21ba3bmsh40de2f313d3e435p1cf0acjsn33cd70909f84"
+  }
+};
+
+$.ajax(settings).done(function(response) {
+  console.log(response);
+});
