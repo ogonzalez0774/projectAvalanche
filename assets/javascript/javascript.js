@@ -74,11 +74,29 @@ $("#enter").on("click", function() {
 
       $.ajax(settings)
         .done(function(response) {
-          console.log(response[0]);
+          poemNum = Math.floor(Math.random() * response.length + 1);
+          responseChoice = response[poemNum];
+          console.log(responseChoice);
         })
         .then(function(response) {
           $(`#poem`).empty();
-          var wholePoem = response[0].lines;
+
+          responseChoice = response[poemNum];
+          var authorName = responseChoice.author;
+          console.log(authorName);
+          var poemTitle = responseChoice.title;
+          console.log(poemTitle);
+          var authorPush = $(
+            `<p class="poemPrinter text-center">${authorName}</p>`
+          );
+          var titlePush = $(
+            `<p class="poemPrinter text-center font-weight-bold">"${poemTitle}"</p>`
+          );
+          $(`#poem`).append(titlePush);
+          $(`#poem`).append(authorPush);
+          $(`#poem`).append($(`<br>`));
+
+          var wholePoem = responseChoice.lines;
           wholePoem.forEach(element => {
             lineDiv = $(`<p class="poemPrinter text-center">${element}</p>`);
             $(`#poem`).append(lineDiv);
