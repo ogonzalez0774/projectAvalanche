@@ -45,9 +45,13 @@ $("#enter").on("click", function() {
       // Transfer content to HTML
 
       $("#city").html("<h1>" + response.name + " Weather Details</h1>");
-      $("#currentWeather").text(
-        "Current Weather: " + response.weather[0].description
-      );
+      //   Found code for Capitalize first letter of String: https://joshtronic.com/2016/02/14/how-to-capitalize-the-first-letter-in-a-string-in-javascript/
+
+      let weatherDescription =
+        response.weather[0].description.charAt(0).toUpperCase() +
+        response.weather[0].description.substring(1);
+
+      $("#currentWeather").text("Current Weather: " + weatherDescription);
       $("#wind").text("Wind Speed: " + response.wind.speed);
       $("#humidity").text("Humidity: " + response.main.humidity);
       $("#temp").text("Temperature (F) " + response.main.temp);
