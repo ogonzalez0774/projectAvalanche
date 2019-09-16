@@ -108,3 +108,8 @@ $("#enter").on("click", function() {
         });
     });
 });
+$("#typearea").keyup(function(event) {
+  if (event.keyCode === 13) {
+    $("#enter").click();
+  }
+});
