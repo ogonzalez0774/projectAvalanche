@@ -118,8 +118,19 @@ input {
 }
 
 @media screen and (max-width: 667px) {
+  .jumbotron {
+    visibility: hidden;
+  }
   #grayblock {
     margin-top: -333px;
+  }
+  #toplogo {
+    visibility: visible;
+    height: 250px;
+    margin-top: -50px;
+  }
+  .text-center {
+    visibility: visible;
   }
   #weather {
     margin-top: 300px;
@@ -133,9 +144,10 @@ input {
     margin-top: 15px;
   }
   h1 {
+    visibility: visible;
     text-align: center;
     font-weight: 100px;
-    margin-top: 90px;
+    margin-top: 55px;
   }
   input {
     font-family: Arial, Helvetica, sans-serif;
@@ -147,5 +159,39 @@ input {
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 40px;
     width: 100px;
+  }
+}
+
+@media screen and (max-width: 537px) {
+  .jumbotron {
+    visibility: hidden;
+  }
+  #grayblock {
+    margin-top: -333px;
+  }
+  #toplogo {
+    visibility: visible;
+    height: 245px;
+    margin-top: -55px;
+  }
+  .text-center {
+    visibility: visible;
+  }
+  #weather {
+    margin-top: 300px;
+  }
+  #poem {
+    margin-bottom: 5%;
+  }
+  #welcomeText {
+    font-size: 2.9em;
+    line-height: 1.2em;
+    margin-top: 15px;
+  }
+  h1 {
+    visibility: visible;
+    text-align: center;
+    font-weight: 100px;
+    margin-top: 25px;
   }
 }
