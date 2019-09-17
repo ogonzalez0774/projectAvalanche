@@ -67,11 +67,11 @@ $("#enter").on("click", function() {
       $(`#currentWeather`).empty();
       $("#currentWeather").text("Current Weather: " + weatherDescription);
       $(`#wind`).empty();
-      $("#wind").text("Wind Speed: " + response.wind.speed);
+      $("#wind").text("Wind Speed: " + response.wind.speed + " mph");
       $(`#humidity`).empty();
-      $("#humidity").text("Humidity: " + response.main.humidity);
+      $("#humidity").text("Humidity: " + response.main.humidity + "%");
       $(`#temp`).empty();
-      $("#temp").text("Temperature (F) " + response.main.temp);
+      $("#temp").html("Temperature " + response.main.temp + "&#176;F");
       $(`#typearea`).val("");
       // Log the data in the console as well
       console.log(response.weather.description);
