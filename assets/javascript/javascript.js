@@ -4,6 +4,7 @@ $("#enter").on("click", function() {
   $("#greeting").hide();
   $("#welcomeText").hide();
   $("#secondpage").show();
+  $(".scrollToTop").show();
   // $("#typearea").hide();
   // $(".form-control").show();
 
