@@ -140,3 +140,6 @@ input {
     width: 100px;
   }
 }
+.wider {
+  width: 102%;
+}
