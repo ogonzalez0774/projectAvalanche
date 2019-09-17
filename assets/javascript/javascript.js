@@ -115,6 +115,5 @@ $("#typearea").keyup(function(event) {
 });
 
 $(`#logotype`).on("click", function() {
-  alert("worked");
   location.reload();
 });
