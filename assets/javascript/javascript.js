@@ -25,7 +25,7 @@ $("#enter").on("click", function() {
   let locationInfo = $(`#typearea`).val();
   // Here we are building the URL we need to query the database
   var queryURL =
-    "https://api.openweathermap.org/data/2.5/weather?" +
+    "https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?" +
     `q=${locationInfo}&units=imperial&APPID=` +
     APIKey;
 
@@ -68,7 +68,7 @@ $("#enter").on("click", function() {
       var settings = {
         async: true,
         crossDomain: true,
-        url: `https://thundercomb-poetry-db-v1.p.rapidapi.com/lines/${poemAPIquery}`,
+        url: `https://cors-anywhere.herokuapp.com/https://thundercomb-poetry-db-v1.p.rapidapi.com/lines/${poemAPIquery}`,
         method: "GET",
         headers: {
           "x-rapidapi-host": "thundercomb-poetry-db-v1.p.rapidapi.com",
@@ -112,4 +112,8 @@ $("#typearea").keyup(function(event) {
   if (event.keyCode === 13) {
     $("#enter").click();
   }
+});
+
+$(`#logotype`).on("click", function() {
+  location.reload();
 });
