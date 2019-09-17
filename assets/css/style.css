@@ -63,6 +63,7 @@ button {
 #grayblock {
   height: 70px;
   background-color: #3b3b3b;
+  position: relative;
   margin-top: -275px;
 }
 /* #links {
