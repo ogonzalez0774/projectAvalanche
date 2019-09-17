@@ -11,18 +11,16 @@ $("#enter").on("click", function() {
     method: "GET"
   })
     // After data comes back from the request
-    .then(function(response) {
-      console.log(queryURL);
+    .then(
+      function(response) {
+        console.log(queryURL);
 
-      console.log(response);
-      // storing the data from the AJAX request in the results variable
-      var results = response.data;
-      console.log(results);
-    })
-    .catch(err => {
-      console.log(err);
-      if ((err.statusText = "error")) {
-        //display error message to user
+        // storing the data from the AJAX request in the results variable
+        var results = response.data;
+        console.log(results);
+      },
+      function(err) {
+        console.log(err);
         $(`#currentWeather`).empty();
         $(`#wind`).empty();
         $(`#humidity`).empty();
@@ -31,7 +29,20 @@ $("#enter").on("click", function() {
 
         $(`#city`).text("Sorry, we couldn't find that location!");
       }
-    });
+    );
+  // .catch(err => {
+  //   //   console.log("nick", err);
+  //   if ((err.statusText = "error")) {
+  //     //display error message to user
+  //   $(`#currentWeather`).empty();
+  //   $(`#wind`).empty();
+  //   $(`#humidity`).empty();
+  //   $(`#temp`).empty();
+  //   $(`#poem`).empty();
+
+  //   $(`#city`).text("Sorry, we couldn't find that location!");
+  //   }
+  // });
 
   // This is our API key
   var APIKey = "166a433c57516f51dfab1f7edaed8413";
