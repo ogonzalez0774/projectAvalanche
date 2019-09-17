@@ -91,10 +91,10 @@ $("#enter").on("click", function() {
           var poemTitle = responseChoice.title;
           console.log(poemTitle);
           var authorPush = $(
-            `<p class="poemPrinter text-center">${authorName}</p>`
+            `<p class="poemPrinter text-center animated fadeIn">${authorName}</p>`
           );
           var titlePush = $(
-            `<p class="poemPrinter text-center font-weight-bold">"${poemTitle}"</p>`
+            `<p class="poemPrinter text-center font-weight-bold animated fadeIn">"${poemTitle}"</p>`
           );
           $(`#poem`).append(titlePush);
           $(`#poem`).append(authorPush);
@@ -102,7 +102,9 @@ $("#enter").on("click", function() {
 
           var wholePoem = responseChoice.lines;
           wholePoem.forEach(element => {
-            lineDiv = $(`<p class="poemPrinter text-center">${element}</p>`);
+            lineDiv = $(
+              `<p class="poemPrinter text-center animated fadeInUpBig">${element}</p>`
+            );
             $(`#poem`).append(lineDiv);
           });
         });
