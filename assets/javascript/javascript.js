@@ -4,6 +4,8 @@ $("#enter").on("click", function() {
   $("#greeting").hide();
   $("#welcomeText").hide();
   $("#secondpage").show();
+  // $("#typearea").hide();
+  // $(".form-control").show();
 
   // Performing an AJAX request with the queryURL
   $.ajax({
