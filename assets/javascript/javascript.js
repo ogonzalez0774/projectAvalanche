@@ -25,13 +25,14 @@ $("#enter").on("click", function() {
         // console.log(err);
         // if ((err.statusText = "error")) {
         //display error message to user
-        $(`#currentWeather`).empty();
-        $(`#wind`).empty();
-        $(`#humidity`).empty();
-        $(`#temp`).empty();
-        $(`#poem`).empty();
-        $(`#city`).text("Sorry, we couldn't find that location!");
-        // }
+        setInterval(function() {
+          $(`#currentWeather`).empty();
+          $(`#wind`).empty();
+          $(`#humidity`).empty();
+          $(`#temp`).empty();
+          $(`#poem`).empty();
+          $(`#city`).text("Sorry, we couldn't find that location!");
+        }, 1000);
       }
     });
 
