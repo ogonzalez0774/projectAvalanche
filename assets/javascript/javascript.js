@@ -18,6 +18,19 @@ $("#enter").on("click", function() {
       // storing the data from the AJAX request in the results variable
       var results = response.data;
       console.log(results);
+    })
+    .catch(err => {
+      console.log(err);
+      if ((err.statusText = "error")) {
+        //display error message to user
+        $(`#currentWeather`).empty();
+        $(`#wind`).empty();
+        $(`#humidity`).empty();
+        $(`#temp`).empty();
+        $(`#poem`).empty();
+
+        $(`#city`).text("Sorry, we couldn't find that location!");
+      }
     });
 
   // This is our API key
@@ -37,23 +50,27 @@ $("#enter").on("click", function() {
     // We store all of the retrieved data inside of an object called "response"
     .then(function(response) {
       // Log the queryURL
+
       console.log(queryURL);
 
       // Log the resulting object
       console.log(response);
 
       // Transfer content to HTML
-
+      $(`#city`).empty();
       $("#city").html("<h1>" + response.name + " Weather Details</h1>");
       //   Found code for Capitalize first letter of String: https://joshtronic.com/2016/02/14/how-to-capitalize-the-first-letter-in-a-string-in-javascript/
 
       let weatherDescription =
         response.weather[0].description.charAt(0).toUpperCase() +
         response.weather[0].description.substring(1);
-
+      $(`#currentWeather`).empty();
       $("#currentWeather").text("Current Weather: " + weatherDescription);
+      $(`#wind`).empty();
       $("#wind").text("Wind Speed: " + response.wind.speed);
+      $(`#humidity`).empty();
       $("#humidity").text("Humidity: " + response.main.humidity);
+      $(`#temp`).empty();
       $("#temp").text("Temperature (F) " + response.main.temp);
       $(`#typearea`).val("");
       // Log the data in the console as well
