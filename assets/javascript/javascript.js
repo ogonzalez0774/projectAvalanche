@@ -145,40 +145,79 @@ $("#enter").on("click", function(e) {
         }
       };
 
-      $.ajax(settings)
-        .done(function(response) {
-          poemNum = Math.floor(Math.random() * response.length + 1);
-          responseChoice = response[poemNum];
-          console.log(responseChoice);
-        })
-        .then(function(response) {
-          if (response[poemNum]) {
-            $(`#poem`).empty();
+      if (poemAPIquery === "Thunderstorm") {
+        var poemAPIquery = "Storm";
 
+        $.ajax(settings)
+          .done(function(response) {
+            poemNum = Math.floor(Math.random() * response.length + 1);
             responseChoice = response[poemNum];
-            var authorName = responseChoice.author;
-            console.log(authorName);
-            var poemTitle = responseChoice.title;
-            console.log(poemTitle);
-            var authorPush = $(
-              `<p class="poemPrinter text-center animated fadeIn">${authorName}</p>`
-            );
-            var titlePush = $(
-              `<p class="poemPrinter text-center font-weight-bold animated fadeIn">"${poemTitle}"</p>`
-            );
-            $(`#poem`).append(titlePush);
-            $(`#poem`).append(authorPush);
-            $(`#poem`).append($(`<br>`));
+            console.log(responseChoice);
+          })
+          .then(function(response) {
+            if (response[poemNum]) {
+              $(`#poem`).empty();
 
-            var wholePoem = responseChoice.lines;
-            wholePoem.forEach(element => {
-              lineDiv = $(
-                `<p class="poemPrinter text-center animated fadeInUpBig">${element}</p>`
+              responseChoice = response[poemNum];
+              var authorName = responseChoice.author;
+              console.log(authorName);
+              var poemTitle = responseChoice.title;
+              console.log(poemTitle);
+              var authorPush = $(
+                `<p class="poemPrinter text-center animated fadeIn">${authorName}</p>`
               );
-              $(`#poem`).append(lineDiv);
-            });
-          }
-        });
+              var titlePush = $(
+                `<p class="poemPrinter text-center font-weight-bold animated fadeIn">"${poemTitle}"</p>`
+              );
+              $(`#poem`).append(titlePush);
+              $(`#poem`).append(authorPush);
+              $(`#poem`).append($(`<br>`));
+
+              var wholePoem = responseChoice.lines;
+              wholePoem.forEach(element => {
+                lineDiv = $(
+                  `<p class="poemPrinter text-center animated fadeInUpBig">${element}</p>`
+                );
+                $(`#poem`).append(lineDiv);
+              });
+            }
+          });
+      } else {
+        $.ajax(settings)
+          .done(function(response) {
+            poemNum = Math.floor(Math.random() * response.length + 1);
+            responseChoice = response[poemNum];
+            console.log(responseChoice);
+          })
+          .then(function(response) {
+            if (response[poemNum]) {
+              $(`#poem`).empty();
+
+              responseChoice = response[poemNum];
+              var authorName = responseChoice.author;
+              console.log(authorName);
+              var poemTitle = responseChoice.title;
+              console.log(poemTitle);
+              var authorPush = $(
+                `<p class="poemPrinter text-center animated fadeIn">${authorName}</p>`
+              );
+              var titlePush = $(
+                `<p class="poemPrinter text-center font-weight-bold animated fadeIn">"${poemTitle}"</p>`
+              );
+              $(`#poem`).append(titlePush);
+              $(`#poem`).append(authorPush);
+              $(`#poem`).append($(`<br>`));
+
+              var wholePoem = responseChoice.lines;
+              wholePoem.forEach(element => {
+                lineDiv = $(
+                  `<p class="poemPrinter text-center animated fadeInUpBig">${element}</p>`
+                );
+                $(`#poem`).append(lineDiv);
+              });
+            }
+          });
+      }
     })
     .catch(function(err) {
       cleanUp();
