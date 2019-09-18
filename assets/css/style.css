@@ -12,13 +12,15 @@ body {
   background-attachment: fixed;
 }
 #toplogo {
-  height: 150px;
-  margin-top: none;
+  height: 230px;
+  margin-top: -67px;
 }
 h1 {
   text-align: center;
   font-weight: 100px;
-  margin-top: 50px;
+  font-size: 1.5em;
+  margin-top: 70px;
+  margin-right: 38px;
 }
 #greeting {
   /* What’s the Mood for Today? */
@@ -49,7 +51,7 @@ button {
 #welcomeText {
   font-size: 2.85em;
   line-height: 1.5em;
-  margin-top: 15px;
+  margin-top: 6px;
 }
 
 #firstfooter {
@@ -139,7 +141,7 @@ input {
     visibility: hidden;
   }
   #grayblock {
-    margin-top: -333px;
+    margin-top: -308px;
   }
   #toplogo {
     visibility: visible;
@@ -187,7 +189,7 @@ input {
     visibility: hidden;
   }
   #grayblock {
-    margin-top: -333px;
+    margin-top: -338px;
   }
   #toplogo {
     visibility: visible;
@@ -226,6 +228,24 @@ input {
     width: 100px;
   }
 }
+
+/* @media screen and (max-width: 894px) {
+  #grayblock {
+    margin-top: -333px;
+  }
+  #toplogo {
+    visibility: visible;
+    height: 200px;
+    margin-top: -55px;
+  }
+
+  #welcomeText {
+    font-size: 2.3em;
+    line-height: 1.3em;
+    margin-top: 15px;
+  }
+} */
+
 .wider {
   width: 102%;
 }
