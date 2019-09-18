@@ -1,40 +1,42 @@
 console.log("projectAVALANCHE");
 var poemAPIquery;
-$("#enter").on("click", function() {
+function cleanUp() {
+  $(`#currentWeather`).empty();
+  $(`#wind`).empty();
+  $(`#humidity`).empty();
+  $(`#temp`).empty();
+  $(`#poem`).empty();
+  $(`#city`).empty();
+}
+
+//https://stackoverflow.com/questions/28580947/jquery-animate-css-animation-only-working-once-animation-not-resetting
+function reset($elem) {
+  $elem.before($elem.clone(true));
+  var $newElem = $elem.prev();
+  $elem.remove();
+  return $newElem;
+}
+$("#enter").on("click", function(e) {
+  cleanUp();
   $("#greeting").hide();
   $("#welcomeText").hide();
   $("#secondpage").show();
-  $(".scrollToTop").show();
+  //$(".scrollToTop").hide();
   // $("#typearea").hide();
   // $(".form-control").show();
 
-  // Performing an AJAX request with the queryURL
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  })
-    // After data comes back from the request
-    .then(function(response) {
-      console.log(queryURL);
-
-      // storing the data from the AJAX request in the results variable
-      var results = response.data;
-      console.log(results);
-      //   } catch (err) {
-
-      if (results === undefined) {
-        // console.log(err);
-        // if ((err.statusText = "error")) {
-        //display error message to user
-        $(`#currentWeather`).empty();
-        $(`#wind`).empty();
-        $(`#humidity`).empty();
-        $(`#temp`).empty();
-        $(`#poem`).empty();
-        $(`#city`).text("Sorry, we couldn't find that location!");
-        // }
-      }
-    });
+  //Scroll up button fades in when you scroll down to a certain point and fades out when you scroll back up.
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 400) {
+      $(".scrollToTop").fadeIn();
+    } else {
+      $(".scrollToTop").fadeOut();
+    }
+  });
+  //When the scroll up button is pressed scroll function will allow you to get to the top of the page smoothly instead of instantly getting there.
+  $(".scrollToTop").click(function() {
+    $("html, body").animate({ scrollTop: 0 });
+  });
 
   //   function(err) {
   //     console.log(err);
@@ -73,6 +75,7 @@ $("#enter").on("click", function() {
   $.ajax({
     url: queryURL,
     method: "GET"
+    //headers: { "X-Requested-With": "XMLHttpRequest" }
   })
     // We store all of the retrieved data inside of an object called "response"
     .then(function(response) {
@@ -84,21 +87,42 @@ $("#enter").on("click", function() {
       console.log(response);
 
       // Transfer content to HTML
-      $(`#city`).empty();
+      console.log($("#city"));
+      $("#city").removeClass();
       $("#city").html("<h1>" + response.name + " Weather Details</h1>");
+      reset($("#city"));
+      $("#city").addClass("animated fadeInLeftBig");
+      console.log($("#city"));
       //   Found code for Capitalize first letter of String: https://joshtronic.com/2016/02/14/how-to-capitalize-the-first-letter-in-a-string-in-javascript/
 
       let weatherDescription =
         response.weather[0].description.charAt(0).toUpperCase() +
         response.weather[0].description.substring(1);
+
+      $(`#currentWeather`).removeClass();
       $(`#currentWeather`).empty();
       $("#currentWeather").text("Current Weather: " + weatherDescription);
+      reset($("#currentWeather"));
+      $("#currentWeather").addClass("animated fadeInRightBig");
+
+      $(`#wind`).removeClass();
       $(`#wind`).empty();
       $("#wind").text("Wind Speed: " + response.wind.speed + " mph");
+      reset($("#wind"));
+      $("#wind").addClass("animated fadeInLeftBig");
+
+      $(`#humidity`).removeClass();
       $(`#humidity`).empty();
       $("#humidity").text("Humidity: " + response.main.humidity + "%");
+      reset($("#humidity"));
+      $("#humidity").addClass("animated fadeInRightBig");
+
+      $(`#temp`).removeClass();
       $(`#temp`).empty();
       $("#temp").html("Temperature " + response.main.temp + "&#176;F");
+      reset($("#temp"));
+      $("#temp").addClass("animated fadeInLeftBig");
+
       $(`#typearea`).val("");
       // Log the data in the console as well
       console.log(response.weather.description);
@@ -127,31 +151,37 @@ $("#enter").on("click", function() {
           console.log(responseChoice);
         })
         .then(function(response) {
-          $(`#poem`).empty();
+          if (response[poemNum]) {
+            $(`#poem`).empty();
 
-          responseChoice = response[poemNum];
-          var authorName = responseChoice.author;
-          console.log(authorName);
-          var poemTitle = responseChoice.title;
-          console.log(poemTitle);
-          var authorPush = $(
-            `<p class="poemPrinter text-center animated fadeIn">${authorName}</p>`
-          );
-          var titlePush = $(
-            `<p class="poemPrinter text-center font-weight-bold animated fadeIn">"${poemTitle}"</p>`
-          );
-          $(`#poem`).append(titlePush);
-          $(`#poem`).append(authorPush);
-          $(`#poem`).append($(`<br>`));
-
-          var wholePoem = responseChoice.lines;
-          wholePoem.forEach(element => {
-            lineDiv = $(
-              `<p class="poemPrinter text-center animated fadeInUpBig">${element}</p>`
+            responseChoice = response[poemNum];
+            var authorName = responseChoice.author;
+            console.log(authorName);
+            var poemTitle = responseChoice.title;
+            console.log(poemTitle);
+            var authorPush = $(
+              `<p class="poemPrinter text-center animated fadeIn">${authorName}</p>`
             );
-            $(`#poem`).append(lineDiv);
-          });
+            var titlePush = $(
+              `<p class="poemPrinter text-center font-weight-bold animated fadeIn">"${poemTitle}"</p>`
+            );
+            $(`#poem`).append(titlePush);
+            $(`#poem`).append(authorPush);
+            $(`#poem`).append($(`<br>`));
+
+            var wholePoem = responseChoice.lines;
+            wholePoem.forEach(element => {
+              lineDiv = $(
+                `<p class="poemPrinter text-center animated fadeInUpBig">${element}</p>`
+              );
+              $(`#poem`).append(lineDiv);
+            });
+          }
         });
+    })
+    .catch(function(err) {
+      cleanUp();
+      $(`#city`).text("Sorry, we couldn't find that location!");
     });
 });
 $("#typearea").keyup(function(event) {

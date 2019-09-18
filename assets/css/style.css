@@ -130,6 +130,10 @@ input {
   background: white;
 }
 
+.scrollToTop:hover {
+  color: #fa00ff;
+}
+
 @media screen and (max-width: 667px) {
   .jumbotron {
     visibility: hidden;
