@@ -126,7 +126,7 @@ $("#enter").on("click", function(e) {
 
       $(`#typearea`).val("");
       // Log the data in the console as well
-      console.log(response.weather.description);
+      console.log(response.weather[0].description);
       console.log("Wind Speed: " + response.wind.speed);
       console.log("Humidity: " + response.main.humidity);
       console.log("Temperature (F): " + response.main.temp);
@@ -150,7 +150,7 @@ $("#enter").on("click", function(e) {
 
         $.ajax(settings)
           .done(function(response) {
-            poemNum = Math.floor(Math.random() * response.length + 1);
+            poemNum = Math.floor(Math.random() * response.length);
             responseChoice = response[poemNum];
             console.log(responseChoice);
           })
