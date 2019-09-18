@@ -33,6 +33,7 @@ $("#enter").on("click", function(e) {
       $(".scrollToTop").fadeOut();
     }
   });
+
   //When the scroll up button is pressed scroll function will allow you to get to the top of the page smoothly instead of instantly getting there.
   $(".scrollToTop").click(function() {
     $("html, body").animate({ scrollTop: 0 });
